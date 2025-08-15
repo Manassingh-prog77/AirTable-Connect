@@ -10,7 +10,7 @@ import {
   UploadResponse 
 } from '@/types';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const API_URL = import.meta.env.VITE_API_URL || 'https://airtable-connect.onrender.com';
 
 // Configure axios instance
 const api = axios.create({
