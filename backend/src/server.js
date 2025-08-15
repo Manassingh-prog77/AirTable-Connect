@@ -27,6 +27,10 @@ app.use(cors({
 
 app.set('trust proxy', 1);
 app.use(express.json({ limit: "10mb" }));
+app.get("/api/debug-session", (req, res) => {
+  res.json({ session: req.session || null, cookies: req.headers.cookie || null });
+});
+
 app.use(cookieSession({
   name: "sid",
   keys: [process.env.SESSION_SECRET || "default-secret"],
