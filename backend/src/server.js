@@ -30,7 +30,9 @@ app.use(cookieSession({
   name: "sid",
   keys: [process.env.SESSION_SECRET || "default-secret"],
   maxAge: 30 * 24 * 60 * 60 * 1000,
-  sameSite: "none"
+  sameSite: "none",
+  secure: false,
+  httpOnly: true
 }));
 
 // serve uploaded files
