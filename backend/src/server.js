@@ -7,6 +7,7 @@ import cookieSession from "cookie-session";
 import path from "path";
 import { fileURLToPath } from "url";
 
+
 import authRoutes from "./routes/auth.routes.js";
 import airtableRoutes from "./routes/airtable.routes.js";
 import formsRoutes from "./routes/forms.routes.js";
@@ -29,7 +30,7 @@ app.use(cookieSession({
   name: "sid",
   keys: [process.env.SESSION_SECRET || "default-secret"],
   maxAge: 30 * 24 * 60 * 60 * 1000,
-  sameSite: "lax"
+  sameSite: "none"
 }));
 
 // serve uploaded files
