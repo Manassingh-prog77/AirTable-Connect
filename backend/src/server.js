@@ -20,9 +20,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(cors({
-  origin: "*",
-  credentials: false
+  origin: "https://mellow-gelato-b406ce.netlify.app",
+  credentials: true
 }));
+
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieSession({
   name: "sid",
