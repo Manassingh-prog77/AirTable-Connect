@@ -19,7 +19,10 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors({ origin: process.env.CLIENT_URL || "https://mellow-gelato-b406ce.netlify.app/", credentials: true }));
+app.use(cors({
+  origin: "*",
+  credentials: false
+}));
 app.use(express.json({ limit: "10mb" }));
 app.use(cookieSession({
   name: "sid",
